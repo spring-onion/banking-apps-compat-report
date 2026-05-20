@@ -38,6 +38,15 @@ body:
       required: true
 
   - type: input
+    id: country
+    attributes:
+      label: Country of the app
+      description: Specify what country the app is for (it is assumed you're using it in the same country here)
+      placeholder: Canada
+    validations:
+      required: true
+
+  - type: input
     id: os
     attributes:
       label: App version
@@ -49,14 +58,6 @@ body:
     validations:
       required: true
 
-  - type: input
-    id: country
-    attributes:
-      label: Country of the app
-      description: Specify what country the app is for (it is assumed you're using it in the same country here)
-      placeholder: Canada
-    validations:
-      required: true
   - type: input
     id: build_number
     attributes:
@@ -209,9 +210,9 @@ body:
 
         `Settings` → `Apps` → `App in question` → `Advanced`
       options:
-        - label: Yeah
-        - label: Yea, blocked
-        - label: Nope
+        - label: "Yes"
+        - label: Yes, blocked
+        - label: "No"
 
   - type: checkboxes
     attributes:
@@ -235,6 +236,13 @@ body:
     validations:
       required: true
 
+  - type: input
+    attributes:
+      label: App requirement
+      description: Is the app required to access (some of) their services? Can you fallback to a web version or another alternative?
+    validations:
+      required: false
+
   - type: textarea
     id: extra_notes
     attributes:
@@ -251,7 +259,7 @@ body:
     attributes:
       label: ADB logcat of the app if necessary
       description: |
-        If you have any logs that come up that the app is creating relevant to anything mentioned like app crashes, SafetyNet, etc, please send a GitHub Gist of them. Do not send a bug report ZIP to us. They may expose sensitive information. If you wish to send a bug report ZIP, please do so directly to a GrapheneOS project member or developer.
+        If you have any logs that come up that the app is creating relevant to anything mentioned like app crashes, Play Integrity, etc, please send a GitHub Gist of them. Do not send a bug report ZIP to us. They may expose sensitive information. If you wish to send a bug report ZIP, please do so directly to a GrapheneOS project member or developer.
 
         Tip: You can attach images by clicking this area to highlight it and then dragging files in.
       render: systemverilog
